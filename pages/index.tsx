@@ -4,10 +4,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Headvideo from '../components/headvideo';
 import AboutMe from "../components/aboutme"
-
+import Skills from '../components/skills';
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div >
       <Head>
         
         <title>Degryse Mehdi Developpeur Web Front End </title>
@@ -16,8 +16,8 @@ const Home: NextPage = () => {
       </Head>
 
      <Headvideo/>
-      <AboutMe/>
-     
+      
+     <Skills/>
     </div>
   )
 }

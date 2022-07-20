@@ -3,10 +3,12 @@ import React from "react"
 const AboutMe: React.FC = ( ) =>  {
     return (
         <section>
-            <div>vzevze</div>
-            <div className=" min-h-screen bg-red-400">
-            ver
+            <div>
+            <p>
+                <strong className="text-[#61dafb]">Je vous aide à créer de meilleures applications Web, plus rapide.</strong>
+            </p>
             </div>
+           
         </section>
     )
 }

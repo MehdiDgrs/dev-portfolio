@@ -7,6 +7,9 @@ module.exports = {
       tight: '-.015'
     },
     extend: {
+      color:{
+        'bright-blue': '#B5CBF4',
+      },
       
         height : {
           'half-screen' : '50vh',
