@@ -18,6 +18,7 @@ const Home: NextPage = () => {
      <Headvideo/>
       
      <Skills/>
+     
     </div>
   )
 }
