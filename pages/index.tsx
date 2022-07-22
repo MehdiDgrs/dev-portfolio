@@ -5,6 +5,9 @@ import styles from '../styles/Home.module.css'
 import Headvideo from '../components/headvideo';
 import AboutMe from "../components/aboutme"
 import Skills from '../components/skills';
+import LanguagesLogos from '../components/languages-logos';
+
+
 const Home: NextPage = () => {
   return (
     <div >
@@ -18,7 +21,7 @@ const Home: NextPage = () => {
      <Headvideo/>
       
      <Skills/>
-     
+     <LanguagesLogos/>
     </div>
   )
 }

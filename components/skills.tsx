@@ -27,6 +27,8 @@ const Skills:React.FC = ()=> {
     const {clientHeight,offsetTop} = elContainer;
     const screenH = window.innerHeight;
     const halfH=screenH/2;
+    console.log(elContainer.offsetTop)
+    console.log(scrollY)
     const percentY = Math.min(clientHeight + halfH, Math.max(-screenH, scrollY - offsetTop)+halfH)/clientHeight;
     progress = Math.min(numOfPages - 0.5, Math.max(0.5,percentY * numOfPages))
    
