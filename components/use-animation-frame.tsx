@@ -1,7 +1,7 @@
 import { useCallback , useRef, useEffect } from "react";
 
 const useAnimationFrame = (enabled:boolean,callback : () =>void ) => {
-    const requestRef =useRef(null)
+    const requestRef =useRef<ReturnType<typeof requestAnimationFrame>>
     const animate = useCallback(()=>{
         callback()
         requestRef.current = requestAnimationFrame(animate)

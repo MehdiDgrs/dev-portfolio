@@ -3,10 +3,10 @@ import React, { useEffect,useContext,useState } from 'react'
 
 
 interface Size {
-    width:number
+    innerWidth:number
 }
 
-export let sizeContext = React.createContext<Size>({width:0})
+export let sizeContext = React.createContext<Size>({innerWidth:0})
 
 
 
@@ -14,17 +14,17 @@ export let sizeContext = React.createContext<Size>({width:0})
 
   let  SizeObserver:React.FC = ({children})=> {
 
-    let [width,setWidth] = useState(null)
+    let [innerWidth,setWidth] = useState(null)
 
 
     useEffect(()=>{
         setWidth(window.innerWidth);
-    }, [width]
+    }, [innerWidth]
     
     )
 
     return(
-    <sizeContext.Provider value ={{width}} >
+    <sizeContext.Provider value ={{innerWidth}} >
         {children}
     </sizeContext.Provider>
     )
