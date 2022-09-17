@@ -7,17 +7,13 @@
     cursor:grabbing;
 }
 
-.container {
-    user-select:none;
-}
 
-.slide {
-    flex:  0 0 auto;
-    max-width: min(70%,620 px);
-    opacity: 0.4;
-    transition: opacity 0.4s;
-}
+
 
 .slide:global(.active){
     opacity: 1;
+}
+
+.embla__slide {
+  flex:0 0 80%
 }

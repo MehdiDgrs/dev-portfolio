@@ -20,3 +20,23 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.viewport:global(.is-draggable) {
+  cursor:move;
+  cursor:grab
+}
+
+.viewport:global(.is-dragging) {
+  cursor:grabbing;
+}
+
+
+
+
+.slide:global(.active){
+  opacity: 1;
+}
+
+.embla__slide {
+flex:0 0 80%
+}

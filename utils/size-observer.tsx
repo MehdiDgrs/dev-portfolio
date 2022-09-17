@@ -19,6 +19,7 @@ export let sizeContext = React.createContext<Size>({innerWidth:0})
 
     useEffect(()=>{
         setWidth(window.innerWidth);
+      window.addEventListener('resize', () => setWidth(window.innerWidth))
     }, [innerWidth]
     
     )
