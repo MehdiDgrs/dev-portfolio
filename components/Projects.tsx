@@ -1,6 +1,8 @@
 import React from "react";
 import EmblaCarousel from "./Carousel";
 import extensionProjectPic from "../public/assets/screenshot1280x800.png";
+import ProjectSection from "./project-section";
+
 let Projects: React.FC = () => {
   let projects = [
     {
@@ -9,7 +11,7 @@ let Projects: React.FC = () => {
       description:
         "Created with the Vite.js tool to allow fast refresh during the developpement of an extension,used the CRXJS plugin to inject React code into the DOM ",
       img: extensionProjectPic,
-      link: "",
+      url: "https://github.com/MehdiDgrs/vite-react-chrome-extension/blob/main/src/components/modals.jsx",
     },
     {
       index: 2,
@@ -17,19 +19,24 @@ let Projects: React.FC = () => {
       description:
         "Used Next.JS, the strapi CMS as a backend, Apollo/GraphQL for  querys between backend and frontend, to develop my own photography portfolio  ",
       img: extensionProjectPic,
-      link: "",
+      url: "https://photography-portfolio-git-main-mehdidgrs.vercel.app/",
     },
     {
       index: 3,
       title: "Tenzy Game",
       description: "Used React to make a small Tenzy Game",
       img: extensionProjectPic,
-      link: "",
+      url: "https://mehdidgrs.github.io/Tenzy/",
     },
   ];
   return (
-    <section id="projects" className="h-screen   ">
-      <EmblaCarousel projects={projects}></EmblaCarousel>
+    <section id="projects" className="min-h-screen max-h-full   ">
+      <div className="h-screen  justify-center grid place-content-center  ">
+        <h1 className="inline   lg:text-4xl  mx-auto text-4xl md:text-6xl  text-white tracking-tight font-semibold ">
+          Projects
+        </h1>
+      </div>
+      <ProjectSection projectArray={projects} />
     </section>
   );
 };
