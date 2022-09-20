@@ -8,43 +8,114 @@ let Contact: React.FC = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const endpoint = "/api/form";
+
+    let JSONdata = JSON.stringify(data);
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+    };
+    const response = await fetch(endpoint, options);
+    console.log(response.body);
+  };
 
   return (
-    <div className="bg-white text-black flex flex-col justify-center text-center min-h-screen">
-      <div className="pb-10">
-        <h2 className=" text-3xl lg:text-4xl"> Me contacter.</h2>
+    <div className="flex min-h-screen items-center justify-start bg-white">
+      <div className="mx-auto w-full max-w-lg">
+        <h1 className="text-4xl font-medium">Contact me</h1>
+        <h2 className="text-sm font-small text-gray-900 bold my-2">
+          Or call me at 0618719325
+        </h2>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-10">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="relative z-0">
+              <input
+                {...register("Name", {
+                  required: { value: true, message: "Field required" },
+                  maxLength: { value: 20, message: "Too many characters" },
+                  pattern: {
+                    value: /^[a-zA-Z\s]*$/,
+                    message: "invalid characters",
+                  },
+                })}
+                type="text"
+                name="Name"
+                className="peer block w-full appearance-none border-0 border-b border-[#1C3864] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#1C3864] focus:outline-none focus:ring-0"
+                placeholder=" "
+              />
+              <label
+                className={`absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 ${
+                  errors.Name
+                    ? "peer-focus:text-red"
+                    : "peer-focus:text-[#1C3864]"
+                } peer-focus:dark:text-[#1C3864] ${
+                  errors.Name && "text-red-600"
+                }`}
+              >
+                {errors.Name ? `${errors.Name.message}` : "Your Name"}
+              </label>
+            </div>
+            <div className="relative z-0">
+              <input
+                {...register("email", {
+                  required: { value: true, message: "Field required" },
+
+                  pattern: {
+                    value:
+                      /^[_ a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9_ ]+)*$/,
+                    message: "Invalid Email adress",
+                  },
+                })}
+                type="text"
+                name="email"
+                className="peer block w-full appearance-none border-0 border-b border-[#1C3864] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#1C3864] focus:outline-none focus:ring-0"
+                placeholder=" "
+              />
+              <label
+                className={`absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  ${
+                  errors.email
+                    ? "peer-focus:text-red-600 peer-focus:dark:text-red-600"
+                    : "peer-focus:text-[#1C3864] peer-focus:dark:text-[#1C3864]"
+                }`}
+              >
+                {errors.email ? `${errors.email.message}` : "Your Email"}
+              </label>
+            </div>
+            <div className="relative z-0 col-span-2">
+              <textarea
+                {...register("message", {
+                  required: { value: true, message: "Field required" },
+                })}
+                id="message"
+                name="message"
+                rows="5"
+                className={`peer block w-full appearance-none border-0 border-b border-[#1C3864] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#1C3864] focus:outline-none focus:ring-0`}
+              ></textarea>
+              <label
+                className={`absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75  ${
+                  errors.message
+                    ? "peer-focus:text-red-600 peer-focus:dark:text-red-600"
+                    : "peer-focus:text-[#1C3864] peer-focus:dark:text-[#1C3864]"
+                }`}
+              >
+                {errors.message ? `${errors.message.message}` : "Your message"}
+              </label>
+            </div>
+          </div>
+          <button
+            type="submit"
+            className="mt-5 rounded-md bg-[#1C3864] justify-center px-10 py-2 text-white"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
-      <form
-        className=" bold grid w-2/4 gap-y-6 mx-auto text-2xl lg:text-3xl border border-solid border-cyan-200 "
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        {/* register your input into the hook by invoking the "register" function */}
-        <div className="grid grid-cols-2 ">
-          <label className="place-items-end " htmlFor="lastName">
-            Last Name :
-          </label>
-          <input
-            type="text"
-            className="border-pink-400"
-            id="lastName"
-            {...register("lastName")}
-          />
-        </div>
-        <div className="grid grid-cols-2">
-          <label htmlFor="firstName">First Name</label>
-          <input type="text" id="firstName" {...register("firstName")} />
-        </div>
-        <div className="grid grid-cols-2">
-          <label htmlFor="Mail">Email</label>
-          <input type="text" id="Mail" {...register("Mail")} />
-        </div>
-        <div>
-          <label htmlFor="Message">Message</label>
-          <textarea type="text" id="Message" {...register("Message")} />
-        </div>
-        <input type="submit" />
-      </form>
     </div>
   );
 };
