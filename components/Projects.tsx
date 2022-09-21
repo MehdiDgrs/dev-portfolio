@@ -1,5 +1,5 @@
 import React from "react";
-import EmblaCarousel from "./Carousel";
+
 import extensionProjectPic from "../public/assets/screenshot1280x800.png";
 import ProjectSection from "./project-section";
 
