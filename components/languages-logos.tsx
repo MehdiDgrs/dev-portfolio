@@ -1,12 +1,18 @@
 import React, { useContext, useEffect, useRef } from "react";
 import Image from "next/image";
 import SkillSliderContainer, { SliderItem } from "./skills-slider";
-
-let LanguagesLogos: React.FC = ({ context }) => {
+interface Props {
+  context: any;
+}
+let LanguagesLogos: React.FC<Props> = ({ context }) => {
   let { innerWidth } = context;
 
   return (
-    <SkillSliderContainer className="" contentWidth={context} offsetX={0}>
+    <SkillSliderContainer
+      className=""
+      contentWidth={context.innerWidth}
+      offsetX={0}
+    >
       <div className={`${innerWidth > 1080 ? "inline-block" : " "} `}>
         <SliderItem width={150}>
           <Image

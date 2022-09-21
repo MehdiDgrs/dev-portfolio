@@ -98,7 +98,7 @@ let Contact: React.FC = () => {
                 })}
                 id="message"
                 name="message"
-                rows="5"
+                rows={5}
                 className={`peer block w-full appearance-none border-0 border-b border-[#1C3864] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#1C3864] focus:outline-none focus:ring-0`}
               ></textarea>
               <label

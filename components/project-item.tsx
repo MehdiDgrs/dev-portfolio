@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-
-let ProjectItem: React.FC = ({ project }) => {
+interface Props {
+  project: any;
+}
+let ProjectItem: React.FC<Props> = ({ project }) => {
   let [toggle, setToggle] = React.useState(false);
 
   let highlightRef = useCallback((node) => {

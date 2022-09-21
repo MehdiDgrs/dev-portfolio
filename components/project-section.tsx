@@ -9,7 +9,7 @@ const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   return 0.2;
 };
 
-const ProjectSection: React.FC = ({ projectArray }) => {
+const ProjectSection = ({ projectArray }) => {
   const refContainer = useRef<HTMLDivElement>(null);
   const numOfPages = 3;
   let progress = 0;
