@@ -49,7 +49,7 @@ const Headvideo: React.FC = () => {
           Mehdi Degryse
         </h1>
         <h2 className="mb-2 text-2xl xl:text-3xl tracking-tight">
-          Developpeur Web Front-End
+          Front-End Developer
         </h2>
       </div>
       <div className=" flex-grow-0 transition-all flex-shrink-0 ">

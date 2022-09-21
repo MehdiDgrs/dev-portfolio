@@ -40,21 +40,19 @@ const Skills: React.FC = () => {
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
             {" "}
-            Je construis des applications web rapides.{" "}
+            I build web applications.{" "}
           </div>
           <span
             className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
-            Je suis constamment en formation sur les techniques de programmation
-            émergentes.{" "}
+            I'm always learning the latest web technologies{" "}
           </span>
           <span
             className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
-            Cela permet a mes applications d'avoir un meilleur SEO et des
-            performances boostées.
+            Because of that, the apps I build are fast and CEO optimized
           </span>
         </div>
       </div>

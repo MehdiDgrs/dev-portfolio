@@ -45,7 +45,7 @@ let SkillSliderContainer: React.FC<Props> = ({
   return (
     <section className="bg-white min-h-screen flex flex-col justify-center gap-16">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="mb-28 text-3xl lg:text-4xl ">Technologies utilisées.</h1>
+        <h1 className="mb-28 text-3xl lg:text-4xl ">Technology Stack.</h1>
         <div
           ref={refContainer}
           id="container"
