@@ -46,7 +46,7 @@ const Skills: React.FC = () => {
             className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
-            I'm always learning the latest web technologies{" "}
+            I`m always learning the latest web technologies{" "}
           </span>
           <span
             className={`${s.skillText} inline-block`}

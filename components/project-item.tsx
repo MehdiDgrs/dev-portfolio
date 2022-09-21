@@ -29,7 +29,7 @@ let ProjectItem: React.FC = ({ project }) => {
         <a
           href={project.url}
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
           className="  mx-auto text-base block text-pink-500  uppercase "
         >
           visit
