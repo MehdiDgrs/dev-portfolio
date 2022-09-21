@@ -7,7 +7,7 @@ let Projects: React.FC = () => {
   let projects = [
     {
       index: 1,
-      title: "Color picker extension from Chrome",
+      title: "Color picker extension for Chrome",
       description:
         "Created with the Vite.js tool to allow fast refresh during the developpement of an extension,used the CRXJS plugin to inject React code into the DOM ",
       img: extensionProjectPic,

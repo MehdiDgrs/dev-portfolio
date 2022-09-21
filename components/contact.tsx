@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 
 let Contact: React.FC = () => {
+  let [submited, setHandleSubmited] = React.useState(null);
   const {
     register,
     handleSubmit,
@@ -9,6 +10,7 @@ let Contact: React.FC = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
+    setHandleSubmited(false);
     const endpoint = "/api/form";
 
     let JSONdata = JSON.stringify(data);
@@ -21,7 +23,9 @@ let Contact: React.FC = () => {
       body: JSONdata,
     };
     const response = await fetch(endpoint, options);
-    console.log(response.body);
+    if (response.status === 200) {
+      setHandleSubmited(true);
+    }
   };
 
   return (
@@ -108,12 +112,18 @@ let Contact: React.FC = () => {
               </label>
             </div>
           </div>
-          <button
-            type="submit"
-            className="mt-5 rounded-md bg-[#1C3864] justify-center px-10 py-2 text-white"
-          >
-            Send Message
-          </button>
+          {submited ? (
+            <div className="mt-5 justify-center bold py-2 text-[#1C3864] ">
+              Thanks for your message !
+            </div>
+          ) : (
+            <button
+              type="submit"
+              className="sm:text-sm mt-5 rounded-md bg-[#1C3864] justify-center px-10 py-2 text-white"
+            >
+              Send Message
+            </button>
+          )}
         </form>
       </div>
     </div>

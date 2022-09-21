@@ -7,6 +7,7 @@ import Projects from "../components/Projects";
 import Skills from "../components/skills";
 import LanguagesLogos from "../components/languages-logos";
 import EmblaCarousel from "../components/Carousel";
+import Footer from "../components/footer";
 import { useContext } from "react";
 import SizeObserver, { sizeContext } from "../utils/size-observer";
 import Contact from "../components/contact";
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
       <LanguagesLogos context={windowWidth} />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 };
