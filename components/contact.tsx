@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 
 let Contact: React.FC = () => {
+  let [clicked, setClicked] = React.useState(null);
   let [submited, setHandleSubmited] = React.useState(null);
   const {
     register,
@@ -10,6 +11,7 @@ let Contact: React.FC = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
+    setClicked(true);
     setHandleSubmited(false);
     const endpoint = "/api/form";
 
@@ -116,6 +118,8 @@ let Contact: React.FC = () => {
             <div className="mt-5 justify-center bold py-2 text-[#1C3864] ">
               Thanks for your message !
             </div>
+          ) : clicked ? (
+            ""
           ) : (
             <button
               type="submit"
