@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'font-name';
+  src: url('/fonts/plastic.ttf'); 
+ }
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: SF PRO Display,SF Pro Icons , Helvetica Neue,Helvetica,Arial, sans-serif;
+  /*font-family: SF PRO Display,SF Pro Icons , Helvetica Neue,Helvetica,Arial, sans-serif;*/
+  font-family: 'font-name';
   line-height: 1.1;
-  letter-spacing: 0em;
-  background-color: #1C3864;
+  
+  /*background-color: #1C3864;*/
 }
 
 a {
